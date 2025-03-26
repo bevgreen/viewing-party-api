@@ -7,7 +7,6 @@ class Api::V1::MoviesController < ApplicationController
         end
     
         response = conn.get("/3/movie/top_rated")
-        # { language: "en-US", page: 1 }
         json = JSON.parse(response.body, symbolize_names: true)
 
         if response.success?
