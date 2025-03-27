@@ -1,0 +1,162 @@
+[
+    {
+        "id": 278,
+        "type": "movie",
+        "attributes": {
+            "title": "The Shawshank Redemption",
+            "vote_average": 8.708
+        }
+    },
+    {
+        "id": 238,
+        "type": "movie",
+        "attributes": {
+            "title": "The Godfather",
+            "vote_average": 8.689
+        }
+    },
+    {
+        "id": 240,
+        "type": "movie",
+        "attributes": {
+            "title": "The Godfather Part II",
+            "vote_average": 8.569
+        }
+    },
+    {
+        "id": 424,
+        "type": "movie",
+        "attributes": {
+            "title": "Schindler's List",
+            "vote_average": 8.567
+        }
+    },
+    {
+        "id": 389,
+        "type": "movie",
+        "attributes": {
+            "title": "12 Angry Men",
+            "vote_average": 8.549
+        }
+    },
+    {
+        "id": 129,
+        "type": "movie",
+        "attributes": {
+            "title": "Spirited Away",
+            "vote_average": 8.538
+        }
+    },
+    {
+        "id": 19404,
+        "type": "movie",
+        "attributes": {
+            "title": "Dilwale Dulhania Le Jayenge",
+            "vote_average": 8.519
+        }
+    },
+    {
+        "id": 155,
+        "type": "movie",
+        "attributes": {
+            "title": "The Dark Knight",
+            "vote_average": 8.519
+        }
+    },
+    {
+        "id": 497,
+        "type": "movie",
+        "attributes": {
+            "title": "The Green Mile",
+            "vote_average": 8.505
+        }
+    },
+    {
+        "id": 496243,
+        "type": "movie",
+        "attributes": {
+            "title": "Parasite",
+            "vote_average": 8.501
+        }
+    },
+    {
+        "id": 680,
+        "type": "movie",
+        "attributes": {
+            "title": "Pulp Fiction",
+            "vote_average": 8.489
+        }
+    },
+    {
+        "id": 372058,
+        "type": "movie",
+        "attributes": {
+            "title": "Your Name.",
+            "vote_average": 8.484
+        }
+    },
+    {
+        "id": 122,
+        "type": "movie",
+        "attributes": {
+            "title": "The Lord of the Rings: The Return of the King",
+            "vote_average": 8.482
+        }
+    },
+    {
+        "id": 1356039,
+        "type": "movie",
+        "attributes": {
+            "title": "Counterattack",
+            "vote_average": 8.479
+        }
+    },
+    {
+        "id": 13,
+        "type": "movie",
+        "attributes": {
+            "title": "Forrest Gump",
+            "vote_average": 8.467
+        }
+    },
+    {
+        "id": 429,
+        "type": "movie",
+        "attributes": {
+            "title": "The Good, the Bad and the Ugly",
+            "vote_average": 8.462
+        }
+    },
+    {
+        "id": 769,
+        "type": "movie",
+        "attributes": {
+            "title": "GoodFellas",
+            "vote_average": 8.456
+        }
+    },
+    {
+        "id": 346,
+        "type": "movie",
+        "attributes": {
+            "title": "Seven Samurai",
+            "vote_average": 8.455
+        }
+    },
+    {
+        "id": 157336,
+        "type": "movie",
+        "attributes": {
+            "title": "Interstellar",
+            "vote_average": 8.453
+        }
+    },
+    {
+        "id": 12477,
+        "type": "movie",
+        "attributes": {
+            "title": "Grave of the Fireflies",
+            "vote_average": 8.45
+        }
+    }
+]
