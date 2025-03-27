@@ -5,8 +5,13 @@ class Api::V1::MoviesController < ApplicationController
             faraday.headers["Authorization"] = "Bearer #{Rails.application.credentials.tmdb[:api_key]}"
             faraday.headers["Accept"] = "application/json"
         end
-    
-        response = conn.get("/3/movie/top_rated")
+        
+        if params[:query].present?
+            response = conn.get("3/search/movie", { query: params[:query] })
+        else
+            response = conn.get("/3/movie/top_rated")
+        end
+        
         json = JSON.parse(response.body, symbolize_names: true)
 
         if response.success?
