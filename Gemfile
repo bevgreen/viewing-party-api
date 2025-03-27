@@ -53,3 +53,8 @@ group :development do
 end
 
 gem 'simplecov', require: false, group: :test
+
+group :test do
+  gem "webmock"
+  gem "vcr"
+end

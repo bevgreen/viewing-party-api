@@ -3,7 +3,10 @@ class MovieSerializer
     attributes :title, :vote_average
 
     def self.format_movie_list(top_movies)
-        top_movies.map do |movie|
+        top_movies_hash = top_movies.to_h
+        movies = top_movies_hash[:results]
+
+        movies.map do |movie|
             {
             id: movie[:id],
             type: "movie",

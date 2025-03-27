@@ -11,11 +11,11 @@ class Api::V1::MoviesController < ApplicationController
         else
             response = conn.get("/3/movie/top_rated")
         end
-        
-        json = JSON.parse(response.body, symbolize_names: true)
 
+        json = JSON.parse(response.body, symbolize_names: true)
+        
         if response.success?
-            top_movies = json[:results].first(20) 
+            top_movies = json.first(20) 
             render json: MovieSerializer.format_movie_list(top_movies) #create serializer with required data
         else
             render json: { error: "Failed to fetch movies" }, status: :bad_request

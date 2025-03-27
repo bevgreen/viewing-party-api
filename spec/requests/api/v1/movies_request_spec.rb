@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Top Rated Movies Endpoint" do
     describe "happy path" do
-        it "can retrieve the top 20 rated movies" do
+        it "can retrieve the top 20 rated movies", :vcr do
             get "/api/v1/movies"
 
             expect(response).to be_successful
