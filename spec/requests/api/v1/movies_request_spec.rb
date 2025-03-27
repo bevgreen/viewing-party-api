@@ -21,5 +21,17 @@ RSpec.describe "Top Rated Movies Endpoint" do
             expect(first_movie[:attributes]).to have_key(:title)
             expect(first_movie[:attributes]).to have_key(:vote_average)
         end
+
+        it "can retrive movies based on search query " do
+            get "/api/v1/movies", params: { query: "Shawshank" }
+
+            expect(response).to be_successful
+            json = JSON.parse(response.body, symbolize_names: true)
+
+            expect(json).to be_an(Array)
+            first_movie = json.first
+            expect(first_movie[:attributes][:title]).to include("Shawshank")
+
+        end
     end
 end
