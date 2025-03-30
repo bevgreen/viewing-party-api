@@ -22,7 +22,7 @@ RSpec.describe "Top Rated Movies Endpoint" do
             expect(first_movie[:attributes]).to have_key(:vote_average)
         end
 
-        it "can retrive movies based on search query " do
+        it "can retrive movies based on search query ", :vcr do
             get "/api/v1/movies", params: { query: "Shawshank" }
 
             expect(response).to be_successful
