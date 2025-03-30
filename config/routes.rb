@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :sessions, only: :create
       resources :movies, only: :index
       resources :viewing_parties, only: [:create]
-      post "/api/v1/viewing_parties/:id/invitees", to: "api/v1/viewing_party_users#create" #refactor later into more concise code
+      post "/viewing_parties/:id/invitees", to: "viewing_party_users#create"
 
     end
   end
