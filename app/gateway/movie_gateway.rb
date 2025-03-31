@@ -23,7 +23,9 @@ class MovieGateway
         movie_response = conn.get("/3/movie/#{movie_id}")
         cast_response = conn.get("/3/movie/#{movie_id}/credits")
         reviews_response = conn.get("/3/movie/#{movie_id}/reviews")
-    
+        
+        return nil unless movie_response.success?
+        
         movie_data = JSON.parse(movie_response.body, symbolize_names: true)
         cast_data = JSON.parse(cast_response.body, symbolize_names: true)[:cast].first(10)
         reviews_data = JSON.parse(reviews_response.body, symbolize_names: true)[:results].first(5) 
