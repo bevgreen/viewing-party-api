@@ -6,7 +6,6 @@ class ViewingParty < ApplicationRecord
 
     def self.create_viewing_party(viewing_party_params) 
         #refactor this huge method into smaller methods later on
-        
         start_time = viewing_party_params[:start_time].to_time
         end_time = viewing_party_params[:end_time].to_time
         party_duration = (end_time - start_time) / 60
@@ -20,8 +19,9 @@ class ViewingParty < ApplicationRecord
 
         valid_users = []
         invalid_users = []
+        invitees = viewing_party_params[:invitees]
 
-        viewing_party_params[:invitees].each do |user_id|
+        invitees.each do |user_id|
             if User.exists?(user_id)
                 valid_users << user_id  
             else
@@ -41,6 +41,7 @@ class ViewingParty < ApplicationRecord
             movie_title: viewing_party_params[:movie_title],
             host_id: viewing_party_params[:host_id]
         )
+        
         if party.save
             valid_users.each do |user_id|
                 ViewingPartyUser.create!(viewing_party: party, user_id: user_id)

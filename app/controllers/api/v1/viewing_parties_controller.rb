@@ -13,17 +13,16 @@ class Api::V1::ViewingPartiesController < ApplicationController
     end
     
     private
-
     def viewing_party_params
-            permitted_params = params.require(:viewing_party).permit(:name, 
-                                                                    :start_time, 
-                                                                    :end_time, 
-                                                                    :movie_id, 
-                                                                    :movie_title, 
-                                                                    :host_id, 
-                                                                    invitees: []
-                                                                    )
-        
-            permitted_params
-        end
+        permitted_params = params.require(:viewing_party).permit(
+            :name, 
+            :start_time, 
+            :end_time, 
+            :movie_id, 
+            :movie_title, 
+            :host_id
+        )
+        permitted_params[:invitees] = params[:invitees] if params[:invitees].present?
+        permitted_params
+    end
 end
