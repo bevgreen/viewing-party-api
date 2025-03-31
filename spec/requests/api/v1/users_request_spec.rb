@@ -94,7 +94,7 @@ RSpec.describe "Users API", type: :request do
       ViewingParty.destroy_all
       ViewingPartyUser.destroy_all
     end
-    it "retrieves a user's profile with hosted and invited viewing parties" do
+    it "retrieves a user's profile with hosted and invited viewing parties", :vcr do
       user = User.create!(name: "Leo DiCaprio", username: "leo_real_verified", password: "password123")
 
       hosted_party = ViewingParty.create!(
@@ -140,7 +140,7 @@ RSpec.describe "Users API", type: :request do
       expect(json[:data][:attributes][:viewing_parties_invited].first[:movie_title]).to eq("The Lord of the Rings: The Fellowship of the Ring")
     end
 
-    it "returns an empty array when the user has no hosted or invited parties" do
+    it "returns an empty array when the user has no hosted or invited parties", :vcr do
       new_user = User.create!(name: "Solo User", username: "solo_dolo", password: "password123")
 
       get "/api/v1/users/#{new_user.id}"
@@ -153,7 +153,7 @@ RSpec.describe "Users API", type: :request do
       expect(json[:data][:attributes][:viewing_parties_invited]).to eq([])
     end
 
-    it "returns a 404 error when an invalid user ID is provided" do
+    it "returns a 404 error when an invalid user ID is provided", :vcr do
       get "/api/v1/users/9999"
 
 
