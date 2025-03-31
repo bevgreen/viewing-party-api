@@ -13,7 +13,12 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    
+    user = User.find_by(id: params[:id])
+    if user
+      render json: UserSerializer.format_user_profile(user)
+    else
+      render json: { message: "Invalid User ID", status: 404 }, status: :not_found
+    end
   end
 
   private
