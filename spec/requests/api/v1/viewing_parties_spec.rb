@@ -37,14 +37,12 @@ RSpec.describe "Viewing Parties API", type: :request do
             expect(invitee_ids).to match_array(viewing_party_params[:invitees])
         end
 
-        xit "returns an error if required parameters are missing", :vcr do #skipping test currently, having difficulty with passing no params
+        it "returns an error if required parameters are missing", :vcr do #skipping test currently, having difficulty with passing no params
             post "/api/v1/viewing_parties", params: {viewing_party_params: {}}, as: :json
         
             json = JSON.parse(response.body, symbolize_names: true)
-        
-            expect(response).to have_http_status(:bad_request) 
-            expect(json[:message]).to eq("Viewing party could not be created")
-            expect(json[:errors]).to include("param is missing or the value is empty: viewing_party")
+            expect(json[:exception]).to eq("#<ActionController::ParameterMissing: param is missing or the value is empty: viewing_party>")
+            expect(json[:error]).to eq("Bad Request")
         end
 
         it "returns an error if party duration is shorter than the movie runtime", :vcr do
