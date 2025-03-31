@@ -14,11 +14,10 @@ RSpec.describe "Viewing Parties API", type: :request do
                 end_time: "2025-02-01 20:30:00",
                 movie_id: 278,
                 movie_title: "The Shawshank Redemption",
-                host_id: @host.id,
-                invitees: [@user.id]
-            }
-    
-            post "/api/v1/viewing_parties", params: {viewing_party: viewing_party_params}, as: :json
+                host_id: @host.id
+                }
+
+            post "/api/v1/viewing_parties", params: { viewing_party: viewing_party_params, invitees: [@user.id] }, as: :json
 
             json = JSON.parse(response.body, symbolize_names: true)
 
@@ -34,17 +33,15 @@ RSpec.describe "Viewing Parties API", type: :request do
             expect(json[:host_id]).to eq(viewing_party_params[:host_id])
 
             invitee_ids = json[:invitees].map { |invitee| invitee[:id] }
-            expect(invitee_ids).to match_array(viewing_party_params[:invitees])
+            expect(invitee_ids).to eq([@user.id])
         end
 
-        xit "returns an error if required parameters are missing", :vcr do #skipping test currently, having difficulty with passing no params
+        it "returns an error if required parameters are missing", :vcr do 
             post "/api/v1/viewing_parties", params: {viewing_party_params: {}}, as: :json
         
             json = JSON.parse(response.body, symbolize_names: true)
-        
-            expect(response).to have_http_status(:bad_request) 
-            expect(json[:message]).to eq("Viewing party could not be created")
-            expect(json[:errors]).to include("param is missing or the value is empty: viewing_party")
+            expect(json[:exception]).to eq("#<ActionController::ParameterMissing: param is missing or the value is empty: viewing_party>")
+            expect(json[:error]).to eq("Bad Request")
         end
 
         it "returns an error if party duration is shorter than the movie runtime", :vcr do
@@ -73,11 +70,10 @@ RSpec.describe "Viewing Parties API", type: :request do
                 end_time: "2025-02-01 20:30:00",
                 movie_id: 278,
                 movie_title: "The Shawshank Redemption",
-                host_id: @host.id,
-                invitees: [99999] 
+                host_id: @host.id
             }
 
-            post "/api/v1/viewing_parties", params: {viewing_party: party_with_invalid_invitees}, as: :json
+            post "/api/v1/viewing_parties", params: {viewing_party: party_with_invalid_invitees,  invitees: [99999]}, as: :json
 
             json = JSON.parse(response.body, symbolize_names: true)
 

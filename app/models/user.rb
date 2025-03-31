@@ -6,6 +6,5 @@ class User < ApplicationRecord
   has_secure_token :api_key
   has_many :viewing_party_users
   has_many :viewing_parties, through: :viewing_party_users
-  
-
+  has_many :hosted_parties, class_name: "ViewingParty", foreign_key: "host_id"
 end
