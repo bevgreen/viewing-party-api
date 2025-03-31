@@ -12,6 +12,10 @@ class Api::V1::UsersController < ApplicationController
     render json: UserSerializer.format_user_list(User.all)
   end
 
+  def show
+    
+  end
+
   private
 
   def user_params
