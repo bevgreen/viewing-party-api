@@ -1,0 +1,147 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/9999999048390485
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_ACCESS_TOKEN>
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 31 Mar 2025 18:14:40 GMT
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 22c078507e8c7d8df016a5289bd8da2a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MSP50-P3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - akR9JimGNS6-6EMwri-3vuele6qAT3tktft8bbLhLK68r4YnT3AX1Q==
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Mon, 31 Mar 2025 18:14:40 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/9999999048390485/credits
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_ACCESS_TOKEN>
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 31 Mar 2025 18:14:40 GMT
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 9e3673813f43939c5b87d1aca62ec1c2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MSP50-P3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Sz8bKgcuudFMyGll_AuN1yNcz6tdGtvCPymSMBIs3FqgH3G8VUQc1A==
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Mon, 31 Mar 2025 18:14:40 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/9999999048390485/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TMDB_ACCESS_TOKEN>
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v2.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 31 Mar 2025 18:14:40 GMT
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding,accept-encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 751e87b6382668c022b03c8410527c38.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MSP50-P3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - qXKURj0IqkzNqJMnJ9qo7WJ7sKon71XPCnoUSmxMhQq09FiMT4Lq-w==
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Mon, 31 Mar 2025 18:14:40 GMT
+recorded_with: VCR 6.3.1

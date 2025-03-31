@@ -4,11 +4,13 @@ class ViewingParty < ApplicationRecord
     has_many :viewing_party_users
     has_many :users, through: :viewing_party_users
 
-    def self.create_viewing_party(viewing_party_params) #refactor this huge method into smaller methods later on
+    def self.create_viewing_party(viewing_party_params) 
+        #refactor this huge method into smaller methods later on
+        
         start_time = viewing_party_params[:start_time].to_time
         end_time = viewing_party_params[:end_time].to_time
         party_duration = (end_time - start_time) / 60
-        movie_runtime = MovieDetails.get_movie_runtime_by_id(viewing_party_params[:movie_id])
+        movie_runtime = MovieGateway.get_movie_runtime_by_id(viewing_party_params[:movie_id])
         
         if end_time < start_time
             return ErrorMessage.new("End time must be after start time", 400)
